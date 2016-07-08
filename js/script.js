@@ -8,13 +8,24 @@ $( document ).ready(function() {
 
   function showGameBoard() {
     $title.remove();
-    $card.show();
     $score.show();
+    var card = new Card({
+          title: "Here's the Title",
+          item: "Here's the filler text"
+        });
+    $("body").append(template(card));
   }
 
   //Handlebars Template variables
   var source = $("#card-template").html();
   var template = Handlebars.compile(source);
+
+  // Card Constructor
+  function Card(options) {
+    this.title = options.title;
+    this.item = options.item;
+  }
+
 
   // set up variables
   // keep score

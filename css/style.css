@@ -29,17 +29,17 @@ body {
   display: none;
   float: right;
   width: 200px;
-  height: 80px;
+  height: 50px;
   margin-right: 10px;
   margin-bottom: 10px;
   background-color: white;
   padding: 10px;
 }
 #card {
-  display: none;
   max-width: 400px;
   height: 500px;
   margin: 0 auto;
   background-color: white;
   clear: both;
+  padding: 25px;
 }
