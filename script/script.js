@@ -2,7 +2,8 @@ $( document ).ready(function() {
     // set up variables
     // keep score
     // number card that user is on
-    // array of possible cards to choos from
+    // array of possible cards to choose from
+    // function to shuffle through arrays every time game is played
 
     // user clicks intro title to get started
     // first flash card is shown
