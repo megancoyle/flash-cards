@@ -1,3 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Slackey);
+
 body {
   background: url(../images/desk.jpg);
+}
+
+#container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.title {
+  font-family: 'Slackey', cursive;
+  -webkit-text-stroke: 1px white;
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+h1.title {
+  font-size: 5em;
+  margin-top: -20px;
+}
+h2.title {
+  font-size: 4em;
+  margin-bottom: 0;
 }
