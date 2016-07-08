@@ -4,24 +4,42 @@ body {
   background: url(../images/desk.jpg);
 }
 
-#container {
+#title {
     width: 100%;
     text-align: center;
     margin-top: 15%;
+    font-family: 'Slackey', cursive;
+    -webkit-text-stroke: 1px white;
+    color: black;
+    text-shadow: 2px 2px white;
+}
+#title:hover {
+  cursor:pointer;
 }
 
-.title {
-  font-family: 'Slackey', cursive;
-  -webkit-text-stroke: 1px white;
-  color: black;
-  text-shadow: 2px 2px white;
-}
-
-h1.title {
+#title h1 {
   font-size: 5em;
   margin-top: -20px;
 }
-h2.title {
+#title h2 {
   font-size: 4em;
   margin-bottom: 0;
+}
+#score {
+  display: none;
+  float: right;
+  width: 200px;
+  height: 80px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+}
+#card {
+  display: none;
+  max-width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: white;
+  clear: both;
 }
