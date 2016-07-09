@@ -18,11 +18,13 @@
   <script id="card-template" type="text/x-handlebars-template">
     <div id="card">
       <h3>{{title}}</h3>
-      <p>{{item}}</p>
+      <p class="front">{{front}}</p>
+      <p class="back">{{back}}</p>
       <input class='input' type='text' placeholder='Take a Guess' />
       <input class='submit' type='button' value='Guess!' />
     </div>
   </script>
+  <script src="js/card.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
