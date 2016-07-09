@@ -16,6 +16,7 @@ $( document ).ready(function() {
   var $title = $("#title");
   var $card = $("#card");
   var $score = $("#score");
+  var $message = $("#message");
 
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
@@ -44,6 +45,32 @@ $( document ).ready(function() {
     // generate new card with info from flashCards array
     var card = new Card(flashCards.pop());
     $("body").append(template(card));
+    var $guessSubmit = $(".guess-submit");
+    $guessSubmit.on("click", guessAnswer);
+    var $cardBack = $(".back");
+    $cardBack.hide();
+
+  }
+
+  // on click of submit, user input is evaluated
+  // if matches answer string
+  function guessAnswer(e) {
+    e.preventDefault();
+    var $guessInput = $(".guess-input");
+    var $userGuess = $guessInput.val();
+    var $cardAnswer = $(".back").text();
+    var $cardBack = $(".back");
+    var $cardFront = $(".front");
+
+    if ($userGuess == $cardAnswer) {
+      $message.show().html("<p class='correct'>You got it right!</p>")
+      $cardBack.show();
+      $cardFront.hide();
+    } else {
+      $message.show().html("<p class='wrong'>Sorry, that wasn't right. Better luck next time!</p>")
+      $cardBack.show();
+      $cardFront.hide();
+    }
   }
 
   //Handlebars Template variables
@@ -55,8 +82,7 @@ $( document ).ready(function() {
   // number card that user is on
   // array of possible cards to choose from
 
-  // on click of submit, user input is evaluated
-  // if matches answer string
+
       // add point to user's score
       // add congrats message
 

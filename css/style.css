@@ -25,6 +25,22 @@ body {
   font-size: 4em;
   margin-bottom: 0;
 }
+#message {
+  display: none;
+  float: right;
+  width: 200px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+}
+.correct {
+  color: green;
+}
+.wrong {
+  color: red;
+}
 #score {
   display: none;
   float: right;
