@@ -36,7 +36,13 @@ $( document ).ready(function() {
       back: "answer 3"},
     { title: "Title 4",
       front: "here's the filler text 4",
-      back: "answer 4"}
+      back: "answer 4"},
+    { title: "Title 5",
+      front: "here's the filler text 5",
+      back: "answer 5"},
+    { title: "Title 6",
+      front: "here's the filler text 6",
+      back: "answer 6"}
   ].shuffle();
 
   // first flash card is shown
@@ -81,12 +87,17 @@ $( document ).ready(function() {
     $cardBack.show();
     $cardFront.hide();
     $guessControls.hide();
-
-    for (i = 0; i < flashCards.length; i++) {
-      // show button to move to next card
-      $controls.html("<input class='next' type='button' value='On to the Next Question!' />")
-      $(".next").on("click", nextCard);
-    }
+    $controls.html("<input class='next' type='button' value='On to the Next Question!' />");
+    $(".next").on("click", nextCard);
+    // for (i = 0; i < 5; i++) {
+    //   // show button to move to next card
+    //   $controls.html("<input class='next' type='button' value='On to the Next Question!' />")
+    //   $(".next").on("click", nextCard);
+    //   if (i == 4) {
+    //     $message.hide();
+    //     $controls.html("<input class='play-again' type='button' value='Play Again?' />")
+    //   }
+    // }
   }
 
   function nextCard() {
