@@ -18,7 +18,17 @@ $( document ).ready(function() {
   var $score = $("#score");
   var $message = $("#message");
   var $points = $(".points");
+  // keep score
   var score = 0;
+
+  // timer
+  var sec = -1;
+  function pad(val) { return val > 9 ? val : "0" + val; }
+  setInterval(function () {
+      $("#seconds").html(pad(++sec % 60));
+      $("#minutes").html(pad(parseInt(sec / 60, 10) % 60));
+      $("#hours").html(pad(parseInt(sec / 3600, 10)));
+  }, 1000);
 
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
@@ -75,11 +85,13 @@ $( document ).ready(function() {
     if ($userGuess == $cardAnswer) {
       // add congrats message
       $message.show().html("<p class='correct'>You got it right!</p>")
+      // add point to user's score
       score = score + 1;
       $points.text(score);
     } else {
       // if wrong, say sorry, incorrect
       $message.show().html("<p class='wrong'>Sorry, that wasn't right. Better luck next time!</p>")
+      // subtract point to user's score
       score = score - 1;
       $points.text(score);
     }
@@ -101,24 +113,21 @@ $( document ).ready(function() {
   }
 
   function nextCard() {
-    var card = new Card(flashCards.pop());
-    $("#card").replaceWith(template(card));
-    $(".next").remove();
-    $message.hide();
-    var $guessSubmit = $(".guess-submit");
-    $guessSubmit.on("click", guessAnswer);
-    var $cardBack = $(".back");
-    $cardBack.hide();
+      var card = new Card(flashCards.pop());
+      $("#card").replaceWith(template(card));
+      $(".next").remove();
+      $message.hide();
+      var $guessSubmit = $(".guess-submit");
+      $guessSubmit.on("click", guessAnswer);
+      var $cardBack = $(".back");
+      $cardBack.hide();
   }
 
   //Handlebars Template variables
   var source = $("#card-template").html();
   var template = Handlebars.compile(source);
 
-  // set up variables
-  // keep score
   // number card that user is on
 
-      // add point to user's score
 
 });
