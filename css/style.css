@@ -53,9 +53,15 @@ body {
 }
 #card {
   max-width: 400px;
-  height: 500px;
+  height: 400px;
   margin: 0 auto;
   background-color: white;
   clear: both;
   padding: 25px;
+}
+#controls {
+  padding-top: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+
 }

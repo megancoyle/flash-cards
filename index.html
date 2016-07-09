@@ -11,7 +11,7 @@
   <h1>Flash Cards</h1>
   </div>
   <div id="score">
-    <p>Score:<p>
+    <p>Score: <span class="points">0</span><p>
   </div>
   <div id="message">
   </div>
@@ -22,8 +22,10 @@
       <h3>{{title}}</h3>
       <p class="front">{{front}}</p>
       <p class="back">{{back}}</p>
-      <input class='guess-input' type='text' placeholder='Take a Guess' />
-      <input class='guess-submit' type='button' value='Guess!' />
+    </div>
+    <div id="controls">
+    <input class='guess-input guess' type='text' placeholder='Take a Guess' />
+    <input class='guess-submit guess' type='button' value='Guess!' />
     </div>
   </script>
   <script src="js/card.js"></script>

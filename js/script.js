@@ -17,6 +17,8 @@ $( document ).ready(function() {
   var $card = $("#card");
   var $score = $("#score");
   var $message = $("#message");
+  var $points = $(".points");
+  var score = 0;
 
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
@@ -61,16 +63,41 @@ $( document ).ready(function() {
     var $cardAnswer = $(".back").text();
     var $cardBack = $(".back");
     var $cardFront = $(".front");
+    var $guessControls = $(".guess");
+    var $controls = $("#controls");
 
     if ($userGuess == $cardAnswer) {
+      // add congrats message
       $message.show().html("<p class='correct'>You got it right!</p>")
-      $cardBack.show();
-      $cardFront.hide();
+      score = score + 1;
+      $points.text(score);
     } else {
+      // if wrong, say sorry, incorrect
       $message.show().html("<p class='wrong'>Sorry, that wasn't right. Better luck next time!</p>")
-      $cardBack.show();
-      $cardFront.hide();
+      score = score - 1;
+      $points.text(score);
     }
+    // after card is answered, display other side of flash card with answered
+    $cardBack.show();
+    $cardFront.hide();
+    $guessControls.hide();
+
+    for (i = 0; i < flashCards.length; i++) {
+      // show button to move to next card
+      $controls.html("<input class='next' type='button' value='On to the Next Question!' />")
+      $(".next").on("click", nextCard);
+    }
+  }
+
+  function nextCard() {
+    var card = new Card(flashCards.pop());
+    $("#card").replaceWith(template(card));
+    $(".next").remove();
+    $message.hide();
+    var $guessSubmit = $(".guess-submit");
+    $guessSubmit.on("click", guessAnswer);
+    var $cardBack = $(".back");
+    $cardBack.hide();
   }
 
   //Handlebars Template variables
@@ -80,13 +107,7 @@ $( document ).ready(function() {
   // set up variables
   // keep score
   // number card that user is on
-  // array of possible cards to choose from
-
 
       // add point to user's score
-      // add congrats message
 
-  // if wrong, say sorry, incorrect
-
-  // after card is answered, display other side of flash card with answered
 });
