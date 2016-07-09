@@ -75,7 +75,7 @@ $( document ).ready(function() {
   function guessAnswer(e) {
     e.preventDefault();
     var $guessInput = $(".guess-input");
-    var $userGuess = $guessInput.val();
+    var $userGuess = $guessInput.val().toLowerCase();;
     var $cardAnswer = $(".back").text();
     var $cardBack = $(".back");
     var $cardFront = $(".front");
