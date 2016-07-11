@@ -13,11 +13,11 @@ $( document ).ready(function() {
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
 
-  var keypressNext = $("body").keypress(function (e) {
-    if (e.which == '13') {
-        guessAnswer(e);
-    }
-  });
+  // var keypressNext = $("body").keypress(function (e) {
+  //   if (e.which == '13' || e.which == '39') {
+  //       guessAnswer(e);
+  //   }
+  // });
 
   // first flash card is shown
   // with user input field and submit button
