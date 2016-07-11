@@ -13,6 +13,12 @@ $( document ).ready(function() {
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
 
+  var keypressNext = $("body").keypress(function (e) {
+    if (e.which == '13') {
+        guessAnswer(e);
+    }
+  });
+
   // first flash card is shown
   // with user input field and submit button
   function showGameBoard() {
@@ -36,6 +42,7 @@ $( document ).ready(function() {
     var $cardBack = $(".back");
     $cardBack.hide();
     $guessSubmit.on("click", guessAnswer);
+    keypressNext;
   }
 
   // on click of submit, user input is evaluated
