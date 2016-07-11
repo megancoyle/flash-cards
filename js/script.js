@@ -9,15 +9,11 @@ $( document ).ready(function() {
   var $score = $("#score");
   var $message = $("#message");
   var $points = $(".points");
+  var $guessInput;
+  var $userGuess;
 
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
-
-  // var keypressNext = $("body").keypress(function (e) {
-  //   if (e.which == '13' || e.which == '39') {
-  //       guessAnswer(e);
-  //   }
-  // });
 
   // first flash card is shown
   // with user input field and submit button
@@ -42,15 +38,19 @@ $( document ).ready(function() {
     var $cardBack = $(".back");
     $cardBack.hide();
     $guessSubmit.on("click", guessAnswer);
-    keypressNext;
+    // keypress to next card
+    // $("body").keypress(function (e) {
+    //   if (e.which == '13') {
+    //       guessAnswer();
+    //   }
+    // });
   }
 
   // on click of submit, user input is evaluated
   // if matches answer string
-  function guessAnswer(e) {
-    e.preventDefault();
-    var $guessInput = $(".guess-input");
-    var $userGuess = $guessInput.val().toLowerCase();
+  function guessAnswer() {
+    $guessInput = $(".guess-input");
+    $userGuess = $guessInput.val().toLowerCase();
     var $cardAnswer = $(".back").text();
     var $cardBack = $(".back");
     var $cardFront = $(".front");
@@ -75,7 +75,15 @@ $( document ).ready(function() {
     $cardFront.hide();
     $guessControls.hide();
     $controls.html("<input class='next' type='button' value='On to the Next Card!' />");
+
     $(".next").on("click", nextCard);
+
+    // keypress to next card
+    // $("body").keypress(function (e) {
+    //   if (e.which == '13') {
+    //       nextCard();
+    //   }
+    // });
   }
 
   function nextCard() {
@@ -87,6 +95,13 @@ $( document ).ready(function() {
         $message.hide();
         var $guessSubmit = $(".guess-submit");
         $guessSubmit.on("click", guessAnswer);
+        // // keypress to next card
+        // $("body").keypress(function (e) {
+        //   if (e.which == '13') {
+        //       guessAnswer();
+        //   }
+        // });
+
         var $cardBack = $(".back");
         $cardBack.hide();
       } else {
