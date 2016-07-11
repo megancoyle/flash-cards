@@ -23,7 +23,7 @@ var flashCards = [
   { title: "Technology",
     front: "Name of the window used to access the internet.",
     frontImage: "images/window.jpg",
-    backImage: "images/browser.jpg",
+    backImage: "images/browsers.jpg",
     back: "Browser"},
   { title: "Technology",
     front: "An electronic device used for storing and processing data.",
