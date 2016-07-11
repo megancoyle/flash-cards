@@ -26,7 +26,7 @@ var flashCards = [
     back: "Computer"},
     { title: "Technology",
       front: "Typically a small, specialized program downloaded onto mobile devices.",
-      frontImage: "images/app.jpg",
+      frontImage: "images/uber.jpg",
       back: "App"},
   { title: "Technology",
     front: "With this, we're able to access websites and web applications.",
