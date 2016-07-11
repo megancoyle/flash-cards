@@ -16,6 +16,7 @@ $( document ).ready(function() {
   // first flash card is shown
   // with user input field and submit button
   function showGameBoard() {
+    $("body").css("background-image", "url(images/desk-darker.jpg)");
     $title.remove();
     $score.show();
     // timer
