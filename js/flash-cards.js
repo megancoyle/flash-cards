@@ -20,8 +20,8 @@ var flashCards = [
     front: "Name of the window used to access the internet.",
     frontImage: "images/books-glasses.jpg",
     back: "Browser"},
-  { title: "Title 6",
-    front: "here's the filler text 6",
-    frontImage: "images/books-glasses.jpg",
-    back: "answer 6"}
+  { title: "Technology",
+    front: "With this, we're able to access websites and web applications.",
+    frontImage: "images/site.jpg",
+    back: "Internet"}
 ]
