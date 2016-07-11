@@ -31,19 +31,9 @@ $( document ).ready(function() {
     var card = game.getNextCard();
     $("body").append(template(card));
     var $guessSubmit = $(".guess-submit");
-    var $controls = $("#controls");
     $guessSubmit.on("click", guessAnswer);
     var $cardBack = $(".back");
     $cardBack.hide();
-    // keypress to move to next card
-    $controls.on("keypress", function(e) {
-      e.preventDefault();
-      if(e.keyCode == 13){
-        guessAnswer(e);
-      } else {
-        return;
-      }
-    })
   }
 
   // on click of submit, user input is evaluated
@@ -76,7 +66,7 @@ $( document ).ready(function() {
     $cardFront.hide();
     $guessControls.hide();
     $controls.html("<input class='next' type='button' value='On to the Next Question!' />");
-    $(".next").on("click", nextCard);
+    $(".next").on("click", nextCard)
   }
 
   function nextCard() {
