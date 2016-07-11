@@ -35,8 +35,15 @@ body {
   height: 80px;
   margin: 0 auto;
   margin-bottom: 10px;
-  background-color: white;
   padding: 10px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: 700;
+  background: white;
+  opacity: .8;
+}
+#message p {
+  margin-top: 10px;
 }
 .correct {
   color: green;
@@ -66,7 +73,7 @@ body {
 }
 #card {
   max-width: 400px;
-  height: 420px;
+  height: 430px;
   margin: 0 auto;
   background-color: white;
   clear: both;
@@ -84,6 +91,9 @@ body {
 }
 #card p {
   padding: 0 20px 0 20px;
+}
+.back {
+  font-weight: bold;
 }
 
 img.front {
@@ -105,4 +115,8 @@ input.guess-input.guess {
     padding: 10px;
     background: #ccd9ff;
     border: 1px solid #3366ff;
+}
+input.next, input.again {
+  width: 100%;
+  margin-left: 0;
 }
