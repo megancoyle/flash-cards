@@ -33,9 +33,9 @@ $( document ).ready(function() {
     var card = game.getNextCard();
     $("body").append(template(card));
     var $guessSubmit = $(".guess-submit");
-    $guessSubmit.on("click", guessAnswer);
     var $cardBack = $(".back");
     $cardBack.hide();
+    $guessSubmit.on("click", guessAnswer);
   }
 
   // on click of submit, user input is evaluated
@@ -43,7 +43,7 @@ $( document ).ready(function() {
   function guessAnswer(e) {
     e.preventDefault();
     var $guessInput = $(".guess-input");
-    var $userGuess = $guessInput.val().toLowerCase();;
+    var $userGuess = $guessInput.val().toLowerCase();
     var $cardAnswer = $(".back").text();
     var $cardBack = $(".back");
     var $cardFront = $(".front");
@@ -67,8 +67,8 @@ $( document ).ready(function() {
     $cardBack.show();
     $cardFront.hide();
     $guessControls.hide();
-    $controls.html("<input class='next' type='button' value='On to the Next Question!' />");
-    $(".next").on("click", nextCard)
+    $controls.html("<input class='next' type='button' value='On to the Next Card!' />");
+    $(".next").on("click", nextCard);
   }
 
   function nextCard() {
@@ -91,7 +91,6 @@ $( document ).ready(function() {
         $("#card").html("game over");
       }
   }
-
 
   //Handlebars Template variables
   var source = $("#card-template").html();
