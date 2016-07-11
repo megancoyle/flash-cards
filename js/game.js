@@ -16,7 +16,7 @@ function Game(options) {
   this.guess = function (guess) {
     var answer = this.currentCard.back;
     var guessedRight = guess === answer;
-
+    // scoring logic
     if (guessedRight) {
       this.score++;
     } else {
