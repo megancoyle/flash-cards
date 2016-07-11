@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Slackey);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
 
 body {
   background: url(../images/desk.jpg);
@@ -28,10 +29,11 @@ body {
 }
 #message {
   display: none;
-  float: right;
-  width: 200px;
-  height: 50px;
-  margin-right: 10px;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  max-width: 400px;
+  height: 80px;
+  margin: 0 auto;
   margin-bottom: 10px;
   background-color: white;
   padding: 10px;
@@ -46,14 +48,15 @@ body {
   display: none;
   float: right;
   width: 200px;
-  height: 50px;
+  height: 80px;
   margin-right: 10px;
   margin-bottom: 10px;
   background-color: white;
   padding: 10px;
 }
 #score p {
-    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
 }
 #controls {
   padding-top: 15px;
@@ -86,7 +89,7 @@ body {
 img.front {
     max-width: 400px;
 }
-input.guess-submit, input.next {
+input.guess-submit, input.next, input.again {
   color: white;
   background: #3366ff;
   border-width: 0;
@@ -95,7 +98,7 @@ input.guess-submit, input.next {
   cursor: pointer;
   font-size: .8em;
 }
-input.guess-submit:hover, input.next:hover {
+input.guess-submit:hover, input.next:hover, input.again:hover {
   background: #002699;
 }
 input.guess-input.guess {

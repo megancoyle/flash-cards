@@ -19,14 +19,14 @@ $( document ).ready(function() {
     $title.remove();
     $score.show();
     // timer
-    var sec = -1;
+    var sec = 0;
     function pad(val) { return val > 9 ? val : "0" + val; }
     setInterval(function () {
         $("#seconds").html(pad(++sec % 60));
         $("#minutes").html(pad(parseInt(sec / 60, 10) % 60));
         $("#hours").html(pad(parseInt(sec / 3600, 10)));
     }, 1000);
-    $score.append("<p>Time: <span id='hours'>00</span>:<span id='minutes'>00</span>:<span id='seconds'>00</span></p></div>");
+    $score.append("<p>Time: <span id='hours'>00</span> : <span id='minutes'>00</span> : <span id='seconds'>00</span></p></div>");
 
     // generate new card with info from flashCards array
     var card = game.getNextCard();
