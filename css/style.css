@@ -92,11 +92,11 @@ body {
 #card p {
   padding: 0 20px 0 20px;
 }
-.back {
-  font-weight: bold;
-}
 
 img.front {
+    max-width: 400px;
+}
+img.back {
     max-width: 400px;
 }
 input.guess-submit, input.next, input.again {

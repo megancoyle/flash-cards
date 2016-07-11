@@ -4,4 +4,5 @@ function Card(options) {
   this.front = options.front;
   this.frontImage = options.frontImage;
   this.back = options.back;
+  this.backImage = options.backImage;
 }
