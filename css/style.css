@@ -50,6 +50,12 @@ body {
 .wrong {
   color: red;
 }
+.over {
+    text-align: center;
+    font-size: 4em;
+    color: gray;
+    font-family: 'Lato', sans-serif;
+}
 #score {
   display: none;
   float: right;

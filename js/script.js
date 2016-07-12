@@ -11,6 +11,7 @@ $( document ).ready(function() {
   var $points = $(".points");
   var $guessInput;
   var $userGuess;
+  var isFront = true;
 
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
@@ -41,7 +42,7 @@ $( document ).ready(function() {
     if ($cardBack.attr("display", "none")) {
       // keypress to next card
       $("input").keypress(function (e) {
-        if (e.which == '13') {
+        if (e.keyCode == '13') {
             guessAnswer();
         }
       });
@@ -76,16 +77,18 @@ $( document ).ready(function() {
     $cardBack.show();
     $cardFront.hide();
     $(".next").on("click", nextCard);
-    // if ($cardFront.attr("display", "none")) {
-    //   console.log("display none");
-    //   // keypress to next card
-    //   $("body").keypress(function (e) {
-    //     if (e.which == '13') {
-    //         nextCard();
-    //     }
-    //   });
-    // }
+    isFront = false;
+    if ($cardFront.attr("display", "none") && isFront == false) {
+      console.log("display none");
+      // keypress to next card
+      $("body").keydown(function (e) {
+        if (e.keyCode == 39) {
+            nextCard();
+        }
+      });
+    }
   }
+
 
   function nextCard() {
     var card = game.getNextCard();
@@ -97,10 +100,11 @@ $( document ).ready(function() {
         $guessSubmit.on("click", guessAnswer);
         var $cardBack = $(".back");
         $cardBack.hide();
+        isFront = true;
         if ($cardBack.attr("display", "none")) {
           // keypress to next card
           $("input").keypress(function (e) {
-            if (e.which == '13') {
+            if (e.keyCode == '13') {
                 guessAnswer();
             }
           });
@@ -112,7 +116,7 @@ $( document ).ready(function() {
         $(".again").on("click", function(){
           location.reload();
         });
-        $("#card").html("game over");
+        $("#card").html("<h4 class='over'>Game Over</h4>");
       }
   }
 
