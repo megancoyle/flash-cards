@@ -127,8 +127,10 @@ input.next, input.again {
     float: none;
     margin: 0 auto;
     margin-bottom: 15px;
-    width: 100%;
     max-width: 400px;
+    height: 90px;
+    width: 100%;
+    box-sizing: border-box;
   }
   #title h1 {
     font-size: 4.5em;
@@ -136,6 +138,6 @@ input.next, input.again {
 }
 @media (max-width: 500px) {
   #title h1 {
-    font-size: 4.4em;
+    font-size: 4.2em;
   }
 }
