@@ -72,16 +72,19 @@ $( document ).ready(function() {
         $points.text(game.score);
       }
 
-    // after card is answered, display other side of flash card with answered
+    // after card is answered, display other side of flash card with answer
     $cardBack.show();
     $cardFront.hide();
     $(".next").on("click", nextCard);
-    //add key press here
-      // $("body").keydown(function (e) {
-      //   if (e.which == '39') {
-      //       nextCard();
-      //   }
-      // });
+    // if ($cardFront.attr("display", "none")) {
+    //   console.log("display none");
+    //   // keypress to next card
+    //   $("body").keypress(function (e) {
+    //     if (e.which == '13') {
+    //         nextCard();
+    //     }
+    //   });
+    // }
   }
 
   function nextCard() {
