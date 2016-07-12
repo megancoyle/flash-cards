@@ -81,6 +81,7 @@ body {
   clear: both;
   padding: 10px;
   box-shadow: 4px 4px 2px #737373;
+  perspective: 1000px;
 }
 #card p, h3 {
   font-family: 'Lato', sans-serif;

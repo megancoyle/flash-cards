@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Flash Cards</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 </head>
 <body>
   <div id="title">
@@ -19,16 +20,16 @@
   <script id="card-template" type="text/x-handlebars-template">
     <div id="card-container">
       <div id="card">
-        <div class="front">
-          <h3>{{title}}</h3>
-          <img src="{{frontImage}}">
-          <p>{{front}}</p>
-        </div>
-        <div class="back">
-          <h3>{{title}}</h3>
-          <img src="{{backImage}}">
-          <p>Answer: <strong>{{back}}</strong></p>
-        </div>
+          <div class="front">
+            <h3>{{title}}</h3>
+            <img src="{{frontImage}}">
+            <p>{{front}}</p>
+          </div>
+          <div class="back">
+            <h3>{{title}}</h3>
+            <img src="{{backImage}}">
+            <p>Answer: <strong>{{back}}</strong></p>
+          </div>
       </div>
       <div id="controls">
         <input class='guess-input front' type='text' placeholder='Take a Guess' />
@@ -36,6 +37,7 @@
         <input class='next back' type='button' value='On to the Next Card!' />
       </div>
     </div>
+</section>
   </script>
   <script src="js/utils.js"></script>
   <script src="js/flash-cards.js"></script>
