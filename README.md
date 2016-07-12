@@ -9,3 +9,5 @@ Starting off, I decided to outline the necessary steps involved with the game. S
 * As a user, I should be able to keep track of my progress in the game through score keeping.
 * As a user, I should be able to know when my answer is correct, and when it is wrong.
 * As a user, I should know when the game is over.
+
+<a href="https://megancoyle.github.io/flash-cards/">View the Flash Cards - "Learn How to Internet"</a>
