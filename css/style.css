@@ -107,6 +107,13 @@ body {
     width: 100%;
 }
 
+input[type='submit']
+{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
 input.guess-submit, input.next, input.again {
   color: white;
   background: #3366ff;
