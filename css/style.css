@@ -130,4 +130,12 @@ input.next, input.again {
     width: 100%;
     max-width: 400px;
   }
+  #title h1 {
+    font-size: 4.5em;
+  }
+}
+@media (max-width: 500px) {
+  #title h1 {
+    font-size: 4.4em;
+  }
 }
