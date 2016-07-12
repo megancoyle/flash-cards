@@ -123,6 +123,9 @@ input.next, input.again {
   margin-left: 0;
 }
 @media (max-width: 920px) {
+  * {
+    box-sizing: border-box;
+  }
   #score {
     float: none;
     margin: 0 auto;
@@ -130,7 +133,6 @@ input.next, input.again {
     max-width: 400px;
     height: 90px;
     width: 100%;
-    box-sizing: border-box;
   }
   #title h1 {
     font-size: 4.5em;
