@@ -97,12 +97,10 @@ body {
   padding: 0 20px 0 20px;
 }
 
-.front img {
-    max-width: 400px;
+.front img, .back img {
+    width: 100%;
 }
-.back img {
-    max-width: 400px;
-}
+
 input.guess-submit, input.next, input.again {
   color: white;
   background: #3366ff;
@@ -123,4 +121,13 @@ input.guess-input {
 input.next, input.again {
   width: 100%;
   margin-left: 0;
+}
+@media (max-width: 920px) {
+  #score {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+  }
 }
