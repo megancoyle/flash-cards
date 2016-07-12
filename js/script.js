@@ -36,8 +36,12 @@ $( document ).ready(function() {
     $("body").append(template(card));
     var $guessSubmit = $(".guess-submit");
     var $cardBack = $(".back");
+    $(".guess-input").focus();
+    var $backInput = $(".back-input");
     $cardBack.hide();
+    $backInput.hide();
     $guessSubmit.on("click", guessAnswer);
+    $(".front").on("click", guessAnswer);
     if ($cardBack.attr("display", "none")) {
       // keypress to card back
       $("input").keypress(function (e) {
@@ -58,6 +62,8 @@ $( document ).ready(function() {
     var $cardFront = $(".front");
     var $guessControls = $(".guess");
     var $controls = $("#controls");
+    var $frontInput = $(".front-input");
+    var $backInput = $(".back-input");
 
       var guessedRight = game.guess($userGuess);
       if (guessedRight) {
@@ -74,8 +80,11 @@ $( document ).ready(function() {
 
     // after card is answered, display other side of flash card with answer
     $cardBack.show();
+    $backInput.show();
     $cardFront.hide();
+    $frontInput.hide();
     $(".next").on("click", nextCard);
+    $(".back").on("click", nextCard);
   }
 
 
@@ -84,11 +93,16 @@ $( document ).ready(function() {
     var $controls = $("#controls");
       if (card) {
         $("#card-container").replaceWith(template(card));
+        // cursor automatically in input field
+        $(".guess-input").focus();
         $message.hide();
         var $guessSubmit = $(".guess-submit");
         $guessSubmit.on("click", guessAnswer);
+        $(".front").on("click", guessAnswer);
         var $cardBack = $(".back");
+        var $backInput = $(".back-input");
         $cardBack.hide();
+        $backInput.hide();
         if ($cardBack.attr("display", "none")) {
           // keypress to card back
           $("input").keypress(function (e) {
