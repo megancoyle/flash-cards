@@ -7,8 +7,7 @@
 </head>
 <body>
   <div id="title">
-  <h2>Let's Get Started!</h2>
-  <h1>Flash Cards</h1>
+  <h1>Learn How to Internet</h1>
   </div>
   <div id="score">
     <p>Score: <span class='points'>0</span></p>
@@ -18,16 +17,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <script src="js/handlebars-v4.0.5.js"></script>
   <script id="card-template" type="text/x-handlebars-template">
-    <div id="card">
-      <h3>{{title}}</h3>
-      <img class="front" src="{{frontImage}}">
-      <p class="front">{{front}}</p>
-      <img class="back" src="{{backImage}}">
-      <p class="back">Answer: <strong>{{back}}</strong></p>
-    </div>
-    <div id="controls">
-      <input class='guess-input guess' type='text' placeholder='Take a Guess' />
-      <input class='guess-submit guess' type='button' value='Guess!' />
+    <div id="card-container">
+      <div id="card">
+        <div class="front">
+          <h3>{{title}}</h3>
+          <img src="{{frontImage}}">
+          <p>{{front}}</p>
+        </div>
+        <div class="back">
+          <h3>{{title}}</h3>
+          <img src="{{backImage}}">
+          <p>Answer: <strong>{{back}}</strong></p>
+        </div>
+      </div>
+      <div id="controls">
+        <input class='guess-input front' type='text' placeholder='Take a Guess' />
+        <input class='guess-submit front' type='button' value='Guess!' />
+        <input class='next back' type='button' value='On to the Next Card!' />
+      </div>
     </div>
   </script>
   <script src="js/utils.js"></script>

@@ -38,12 +38,14 @@ $( document ).ready(function() {
     var $cardBack = $(".back");
     $cardBack.hide();
     $guessSubmit.on("click", guessAnswer);
-    // keypress to next card
-    // $("body").keypress(function (e) {
-    //   if (e.which == '13') {
-    //       guessAnswer();
-    //   }
-    // });
+    if ($cardBack.attr("display", "none")) {
+      // keypress to next card
+      $("input").keypress(function (e) {
+        if (e.which == '13') {
+            guessAnswer();
+        }
+      });
+    }
   }
 
   // on click of submit, user input is evaluated
@@ -57,56 +59,53 @@ $( document ).ready(function() {
     var $guessControls = $(".guess");
     var $controls = $("#controls");
 
-    var guessedRight = game.guess($userGuess);
-    if (guessedRight) {
-      // add congrats message
-      $message.show().html("<p class='correct'>You got it right!</p>")
+      var guessedRight = game.guess($userGuess);
+      if (guessedRight) {
+        // add congrats message
+        $message.show().html("<p class='correct'>You got it right!</p>")
 
-      $points.text(game.score);
-    } else {
-      // if wrong, say sorry, incorrect
-      $message.show().html("<p class='wrong'>Sorry, that wasn't right. Better luck next time!</p>")
+        $points.text(game.score);
+      } else {
+        // if wrong, say sorry, incorrect
+        $message.show().html("<p class='wrong'>Sorry, that wasn't right. Better luck next time!</p>")
 
-      $points.text(game.score);
-    }
+        $points.text(game.score);
+      }
 
     // after card is answered, display other side of flash card with answered
     $cardBack.show();
     $cardFront.hide();
-    $guessControls.hide();
-    $controls.html("<input class='next' type='button' value='On to the Next Card!' />");
-
     $(".next").on("click", nextCard);
 
-    // keypress to next card
-    // $("body").keypress(function (e) {
-    //   if (e.which == '13') {
-    //       nextCard();
-    //   }
-    // });
+      // $("body").keydown(function (e) {
+      //   if (e.which == '39') {
+      //       nextCard();
+      //   }
+      // });
   }
 
   function nextCard() {
     var card = game.getNextCard();
-
+    var $controls = $("#controls");
       if (card) {
-        $("#card").replaceWith(template(card));
-        $(".next").remove();
+        $("#card-container").replaceWith(template(card));
         $message.hide();
         var $guessSubmit = $(".guess-submit");
         $guessSubmit.on("click", guessAnswer);
-        // // keypress to next card
-        // $("body").keypress(function (e) {
-        //   if (e.which == '13') {
-        //       guessAnswer();
-        //   }
-        // });
-
         var $cardBack = $(".back");
         $cardBack.hide();
+        if ($cardBack.attr("display", "none")) {
+          // keypress to next card
+          $("input").keypress(function (e) {
+            if (e.which == '13') {
+                guessAnswer();
+            }
+          });
+        }
       } else {
         $message.hide();
-        $("#controls").html("<input class='again' type='button' value='Play Again?' />");
+        $controls.remove();
+        $("#card-container").append("<div id='controls'><input class='again' type='button' value='Play Again?' /></div>");
         $(".again").on("click", function(){
           location.reload();
         });
