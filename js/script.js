@@ -76,7 +76,7 @@ $( document ).ready(function() {
     $cardBack.show();
     $cardFront.hide();
     $(".next").on("click", nextCard);
-
+    //add key press here
       // $("body").keydown(function (e) {
       //   if (e.which == '39') {
       //       nextCard();
