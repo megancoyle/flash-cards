@@ -15,8 +15,7 @@ $( document ).ready(function() {
   // user clicks intro title to get started
   $title.on("click", showGameBoard);
 
-  // first flash card is shown
-  // with user input field and submit button
+  // first flash card is shown with user input field and submit button
   function showGameBoard() {
     $("body").css("background-image", "url(images/desk-darker.jpg)");
     $title.remove();
@@ -53,7 +52,6 @@ $( document ).ready(function() {
   }
 
   // on click of submit, user input is evaluated
-  // if matches answer string
   function guessAnswer() {
     $guessInput = $(".guess-input");
     $userGuess = $guessInput.val().toLowerCase();
@@ -64,8 +62,8 @@ $( document ).ready(function() {
     var $controls = $("#controls");
     var $frontInput = $(".front-input");
     var $backInput = $(".back-input");
-
-      var guessedRight = game.guess($userGuess);
+    // if user input matches answer string
+    var guessedRight = game.guess($userGuess);
       if (guessedRight) {
         // add congrats message
         $message.show().html("<p class='correct'>You got it right!</p>")
@@ -87,7 +85,7 @@ $( document ).ready(function() {
     $(".back").on("click", nextCard);
   }
 
-
+  // getting each card in the game
   function nextCard() {
     var card = game.getNextCard();
     var $controls = $("#controls");
@@ -104,7 +102,7 @@ $( document ).ready(function() {
         $cardBack.hide();
         $backInput.hide();
         if ($cardBack.attr("display", "none")) {
-          // keypress to card back
+          // keypress enter in input to view the back of the card
           $("input").keypress(function (e) {
             if (e.keyCode == '13') {
                 guessAnswer();
@@ -112,6 +110,7 @@ $( document ).ready(function() {
           });
         }
       } else {
+        // when last card is answered
         $message.hide();
         $controls.remove();
         $("#card-container").append("<div id='controls'><input class='again' type='button' value='Play Again?' /></div>");

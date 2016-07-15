@@ -8,11 +8,11 @@ function Game(options) {
   this.score = 0;
 
   this.getNextCard = function () {
-    // pops card from flashCards and sets currentCard it
+    // pops card from flashCards and sets currentCard
     this.currentCard = this.flashCards.pop();
     return this.currentCard;
   }
-
+  //evaluate if guess is correct
   this.guess = function (guess) {
     var answer = this.currentCard.back.toLowerCase();;
     var guessedRight = guess === answer;
