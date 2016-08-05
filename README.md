@@ -15,3 +15,5 @@ Towards the end of working on this project, I ran into issues where I was trying
 * As a user, I should know when the game is over.
 
 <a href="https://megancoyle.github.io/flash-cards/">View the Flash Cards - "Learn How to Internet"</a>
+
+![ScreenShot](learn-how-to-internet.jpg)
