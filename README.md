@@ -14,6 +14,6 @@ Towards the end of working on this project, I ran into issues where I was trying
 * As a user, I should be able to know when my answer is correct, and when it is wrong.
 * As a user, I should know when the game is over.
 
-<a href="https://megancoyle.github.io/flash-cards/">View the Flash Cards - "Learn How to Internet"</a>
+[View the Flash Cards - "Learn How to Internet"](https://megancoyle.github.io/flash-cards/)
 
-![ScreenShot](learn-how-to-internet.jpg)
+[![Learn How to Internet](learn-how-to-internet.jpg)](https://megancoyle.github.io/flash-cards/)
